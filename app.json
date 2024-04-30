@@ -32,10 +32,11 @@
     "plugins": [
       "expo-router",
       "expo-font",
-      "expo-location",
+      ["expo-location",
       {
         "locationAlwaysAndWhenInUseInPermission": "Autoriser WeatherApp à utiliser votre localisation"
       }
+    ]
     ],
     "experiments": {
       "typedRoutes": true
