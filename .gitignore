@@ -58,4 +58,4 @@ apps/site/public/talk/
 apps/studio/types/**
 
 .expo
-.yarn/releases/yarn-4.0.2.cjs
+yarn/releases/yarn-4.0.2.cjs
