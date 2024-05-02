@@ -35,7 +35,7 @@ export default function IndexScreen() {
   const [errorMsg, setErrorMsg] = useState<string | null>(null);
   const [weather, setWeather] = useState<any>(null);
   const [input, setInput] = useState<string | null>(null);
-  const apiKey = process.env.EXPO_PUBLIC_API_KEY;
+  const apiKey = process.env.WEATHER_API_KEY;
 
   console.log("apiKey = ", apiKey);
 
