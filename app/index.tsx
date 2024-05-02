@@ -35,7 +35,7 @@ export default function IndexScreen() {
   const [errorMsg, setErrorMsg] = useState<string | null>(null);
   const [weather, setWeather] = useState<any>(null);
   const [input, setInput] = useState<string | null>(null);
-  const apiKey = process.env.WEATHER_API_KEY;
+  const apiKey = process.env.EXPO_PUBLIC_WEATHER_API_KEY;
 
   console.log("apiKey = ", apiKey);
 
@@ -52,7 +52,7 @@ export default function IndexScreen() {
       console.log("location = ", location);
 
       await fetch(
-        "http://api.weatherapi.com/v1/forecast.json" +
+        "https://api.weatherapi.com/v1/forecast.json" +
           `?key=${apiKey}&q=${location.coords.latitude},${location.coords.longitude}&days=7`,
         {
           method: "GET",
@@ -74,7 +74,7 @@ export default function IndexScreen() {
 
   const handleSearch = async () => {
     await fetch(
-      "http://api.weatherapi.com/v1/forecast.json" +
+      "https://api.weatherapi.com/v1/forecast.json" +
         `?key=${apiKey}&q=${input}&days=7`,
       {
         method: "GET",
@@ -90,7 +90,7 @@ export default function IndexScreen() {
       })
       .catch((error) => {
         console.error("Error while getting weather info = ", error);
-        setErrorMsg("Error while getting weather info");
+        setErrorMsg("Error while getting weather info" + error);
       });
   };
 
@@ -107,6 +107,7 @@ export default function IndexScreen() {
         />
 
         {!apiKey && <Text>API key is missing</Text>}
+        {apiKey && <Text>API KEY : {apiKey}</Text>}
 
         {/* in case the user didnt accept to allow localization */}
         {errorMsg && <Text>{errorMsg}</Text>}
