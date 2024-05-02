@@ -106,6 +106,8 @@ export default function IndexScreen() {
           }}
         />
 
+        {!apiKey && <Text>API key is missing</Text>}
+
         {/* in case the user didnt accept to allow localization */}
         {errorMsg && <Text>{errorMsg}</Text>}
 
