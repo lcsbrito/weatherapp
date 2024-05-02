@@ -3,6 +3,9 @@
     "preview": {
       "android": {
         "buildType": "apk"
+      },
+      "env": {
+        "WEATHER_API_KEY": "@WEATHER_API_KEY"
       }
     },
     "preview2": {
